@@ -1,0 +1,1072 @@
+{
+  "metadata": {
+    "filename": "Margin Call.xlsm",
+    "file_size_kb": 19.91,
+    "title": null,
+    "author": "lenovo",
+    "last_modified_by": "袁 鑫",
+    "created": "2022-07-03 14:39:54",
+    "modified": "2022-07-04 23:13:13",
+    "excel_version": null
+  },
+  "workbook_structure": {
+    "sheet_names": [
+      "Sheet1"
+    ],
+    "sheet_count": 1,
+    "active_sheet": "Sheet1",
+    "has_vba": true
+  },
+  "cell_values": {
+    "Sheet1!E1": {
+      "value": null,
+      "type": "formula",
+      "format": "General",
+      "is_input": false,
+      "is_formula": true,
+      "row": 1,
+      "column": 5,
+      "column_letter": "E"
+    },
+    "Sheet1!B3": {
+      "value": 20,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 3,
+      "column": 2,
+      "column_letter": "B"
+    },
+    "Sheet1!C3": {
+      "value": 23,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 3,
+      "column": 3,
+      "column_letter": "C"
+    },
+    "Sheet1!D3": {
+      "value": 24,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 3,
+      "column": 4,
+      "column_letter": "D"
+    },
+    "Sheet1!E3": {
+      "value": 25,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 3,
+      "column": 5,
+      "column_letter": "E"
+    },
+    "Sheet1!F3": {
+      "value": 26,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 3,
+      "column": 6,
+      "column_letter": "F"
+    },
+    "Sheet1!P3": {
+      "value": "<openpyxl.worksheet.formula.ArrayFormula object at 0x7604071f2a50>",
+      "type": "other",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 3,
+      "column": 16,
+      "column_letter": "P"
+    },
+    "Sheet1!B4": {
+      "value": 19,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 4,
+      "column": 2,
+      "column_letter": "B"
+    },
+    "Sheet1!C4": {
+      "value": "<openpyxl.worksheet.formula.DataTableFormula object at 0x7604071f2de0>",
+      "type": "other",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 4,
+      "column": 3,
+      "column_letter": "C"
+    },
+    "Sheet1!D4": {
+      "value": 19,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 4,
+      "column": 4,
+      "column_letter": "D"
+    },
+    "Sheet1!E4": {
+      "value": 19,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 4,
+      "column": 5,
+      "column_letter": "E"
+    },
+    "Sheet1!F4": {
+      "value": 19,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 4,
+      "column": 6,
+      "column_letter": "F"
+    },
+    "Sheet1!B5": {
+      "value": 7,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 5,
+      "column": 2,
+      "column_letter": "B"
+    },
+    "Sheet1!C5": {
+      "value": 7,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 5,
+      "column": 3,
+      "column_letter": "C"
+    },
+    "Sheet1!D5": {
+      "value": 7,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 5,
+      "column": 4,
+      "column_letter": "D"
+    },
+    "Sheet1!E5": {
+      "value": 7,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 5,
+      "column": 5,
+      "column_letter": "E"
+    },
+    "Sheet1!F5": {
+      "value": 7,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 5,
+      "column": 6,
+      "column_letter": "F"
+    },
+    "Sheet1!C6": {
+      "value": 0,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 6,
+      "column": 3,
+      "column_letter": "C"
+    },
+    "Sheet1!D6": {
+      "value": 0,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 6,
+      "column": 4,
+      "column_letter": "D"
+    },
+    "Sheet1!E6": {
+      "value": 0,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 6,
+      "column": 5,
+      "column_letter": "E"
+    },
+    "Sheet1!F6": {
+      "value": 0,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 6,
+      "column": 6,
+      "column_letter": "F"
+    },
+    "Sheet1!B7": {
+      "value": null,
+      "type": "formula",
+      "format": "General",
+      "is_input": false,
+      "is_formula": true,
+      "row": 7,
+      "column": 2,
+      "column_letter": "B"
+    },
+    "Sheet1!C7": {
+      "value": 6,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 7,
+      "column": 3,
+      "column_letter": "C"
+    },
+    "Sheet1!D7": {
+      "value": 6.142857142857143,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 7,
+      "column": 4,
+      "column_letter": "D"
+    },
+    "Sheet1!E7": {
+      "value": 6.285714285714286,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 7,
+      "column": 5,
+      "column_letter": "E"
+    },
+    "Sheet1!F7": {
+      "value": 6.428571428571429,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 7,
+      "column": 6,
+      "column_letter": "F"
+    },
+    "Sheet1!I12": {
+      "value": "GTI Limited (3344)",
+      "type": "string",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 12,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I13": {
+      "value": 747465,
+      "type": "number",
+      "format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"??_);_(@_)",
+      "is_input": true,
+      "is_formula": false,
+      "row": 13,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I14": {
+      "value": 196177,
+      "type": "number",
+      "format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"??_);_(@_)",
+      "is_input": true,
+      "is_formula": false,
+      "row": 14,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I15": {
+      "value": 1,
+      "type": "number",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 15,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I16": {
+      "value": 6298816,
+      "type": "number",
+      "format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"??_);_(@_)",
+      "is_input": true,
+      "is_formula": false,
+      "row": 16,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I18": {
+      "value": null,
+      "type": "formula",
+      "format": "0.00%",
+      "is_input": false,
+      "is_formula": true,
+      "row": 18,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I19": {
+      "value": 0.01,
+      "type": "number",
+      "format": "0.0%",
+      "is_input": true,
+      "is_formula": false,
+      "row": 19,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I20": {
+      "value": null,
+      "type": "formula",
+      "format": "_ * #,##0.00_ ;_ * \\-#,##0.00_ ;_ * \"-\"??_ ;_ @_ ",
+      "is_input": false,
+      "is_formula": true,
+      "row": 20,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I21": {
+      "value": null,
+      "type": "formula",
+      "format": "_ * #,##0.00_ ;_ * \\-#,##0.00_ ;_ * \"-\"??_ ;_ @_ ",
+      "is_input": false,
+      "is_formula": true,
+      "row": 21,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I24": {
+      "value": 1314891.5197805779,
+      "type": "number",
+      "format": "_(* #,##0_);_(* \\(#,##0\\);_(* \"-\"??_);_(@_)",
+      "is_input": true,
+      "is_formula": false,
+      "row": 24,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I25": {
+      "value": 0.5227860429506087,
+      "type": "number",
+      "format": "0.0%",
+      "is_input": true,
+      "is_formula": false,
+      "row": 25,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I26": {
+      "value": null,
+      "type": "formula",
+      "format": "0.0000",
+      "is_input": false,
+      "is_formula": true,
+      "row": 26,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I27": {
+      "value": null,
+      "type": "formula",
+      "format": "0.00%",
+      "is_input": false,
+      "is_formula": true,
+      "row": 27,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I31": {
+      "value": null,
+      "type": "formula",
+      "format": "0.0000",
+      "is_input": false,
+      "is_formula": true,
+      "row": 31,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I32": {
+      "value": null,
+      "type": "formula",
+      "format": "0.0000",
+      "is_input": false,
+      "is_formula": true,
+      "row": 32,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I33": {
+      "value": null,
+      "type": "formula",
+      "format": "0.0000",
+      "is_input": false,
+      "is_formula": true,
+      "row": 33,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I34": {
+      "value": null,
+      "type": "formula",
+      "format": "0.0000",
+      "is_input": false,
+      "is_formula": true,
+      "row": 34,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I35": {
+      "value": null,
+      "type": "formula",
+      "format": "_ * #,##0.00_ ;_ * \\-#,##0.00_ ;_ * \"-\"??_ ;_ @_ ",
+      "is_input": false,
+      "is_formula": true,
+      "row": 35,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I36": {
+      "value": null,
+      "type": "formula",
+      "format": "0.0000",
+      "is_input": false,
+      "is_formula": true,
+      "row": 36,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I41": {
+      "value": "Probability",
+      "type": "string",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 41,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I42": {
+      "value": 0.0002,
+      "type": "number",
+      "format": "0.00%",
+      "is_input": true,
+      "is_formula": false,
+      "row": 42,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I43": {
+      "value": 0.0033,
+      "type": "number",
+      "format": "0.00%",
+      "is_input": true,
+      "is_formula": false,
+      "row": 43,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I44": {
+      "value": 0.0595,
+      "type": "number",
+      "format": "0.00%",
+      "is_input": true,
+      "is_formula": false,
+      "row": 44,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I45": {
+      "value": 0.8693,
+      "type": "number",
+      "format": "0.00%",
+      "is_input": true,
+      "is_formula": false,
+      "row": 45,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I46": {
+      "value": 0.053,
+      "type": "number",
+      "format": "0.00%",
+      "is_input": true,
+      "is_formula": false,
+      "row": 46,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I47": {
+      "value": 0.0117,
+      "type": "number",
+      "format": "0.00%",
+      "is_input": true,
+      "is_formula": false,
+      "row": 47,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I48": {
+      "value": 0.0012,
+      "type": "number",
+      "format": "0.00%",
+      "is_input": true,
+      "is_formula": false,
+      "row": 48,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I49": {
+      "value": 0.0018,
+      "type": "number",
+      "format": "0.00%",
+      "is_input": true,
+      "is_formula": false,
+      "row": 49,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I53": {
+      "value": "1.65 * s =",
+      "type": "string",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 53,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I54": {
+      "value": "2.33 * s =",
+      "type": "string",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 54,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I57": {
+      "value": "95% of actual distribution =",
+      "type": "string",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 57,
+      "column": 9,
+      "column_letter": "I"
+    },
+    "Sheet1!I58": {
+      "value": "99% of actual distribution =",
+      "type": "string",
+      "format": "General",
+      "is_input": true,
+      "is_formula": false,
+      "row": 58,
+      "column": 9,
+      "column_letter": "I"
+    }
+  },
+  "cell_formulas": {
+    "Sheet1!E1": {
+      "raw_formula": "=1+1+2",
+      "depends_on": [],
+      "used_functions": [],
+      "complexity": "low",
+      "length": 6
+    },
+    "Sheet1!B7": {
+      "raw_formula": "=(B3+B4)/B5",
+      "depends_on": [
+        "B5",
+        "B3",
+        "B4"
+      ],
+      "used_functions": [],
+      "complexity": "low",
+      "length": 11
+    },
+    "Sheet1!I18": {
+      "raw_formula": "=STDEV(U12:U35)*SQRT(12)",
+      "depends_on": [
+        "U12:U35"
+      ],
+      "used_functions": [
+        "SQRT",
+        "STDEV"
+      ],
+      "complexity": "low",
+      "length": 24
+    },
+    "Sheet1!I20": {
+      "raw_formula": "=I13+I14/2",
+      "depends_on": [
+        "I14",
+        "I13"
+      ],
+      "used_functions": [],
+      "complexity": "low",
+      "length": 10
+    },
+    "Sheet1!I21": {
+      "raw_formula": "=I16*I17",
+      "depends_on": [
+        "I17",
+        "I16"
+      ],
+      "used_functions": [],
+      "complexity": "low",
+      "length": 8
+    },
+    "Sheet1!I26": {
+      "raw_formula": "=(I24-I20)/(I24*I25)",
+      "depends_on": [
+        "I24",
+        "I20",
+        "I25"
+      ],
+      "used_functions": [],
+      "complexity": "low",
+      "length": 20
+    },
+    "Sheet1!I27": {
+      "raw_formula": "=(1-NORMSDIST(I26))/2",
+      "depends_on": [
+        "I26"
+      ],
+      "used_functions": [
+        "NORMSDIST"
+      ],
+      "complexity": "low",
+      "length": 21
+    },
+    "Sheet1!I31": {
+      "raw_formula": "=LN(I24/(I20*EXP(-I19*I15)))/(I25*SQRT(I15))+I25*SQRT(I15)/2",
+      "depends_on": [
+        "I20",
+        "I15",
+        "I25",
+        "I24",
+        "I19"
+      ],
+      "used_functions": [
+        "SQRT",
+        "EXP",
+        "LN"
+      ],
+      "complexity": "high",
+      "length": 60
+    },
+    "Sheet1!I32": {
+      "raw_formula": "=I31-I25*SQRT(I15)",
+      "depends_on": [
+        "I15",
+        "I31",
+        "I25"
+      ],
+      "used_functions": [
+        "SQRT"
+      ],
+      "complexity": "low",
+      "length": 18
+    },
+    "Sheet1!I33": {
+      "raw_formula": "=NORMSDIST(I31)",
+      "depends_on": [
+        "I31"
+      ],
+      "used_functions": [
+        "NORMSDIST"
+      ],
+      "complexity": "low",
+      "length": 15
+    },
+    "Sheet1!I34": {
+      "raw_formula": "=NORMSDIST(I32)",
+      "depends_on": [
+        "I32"
+      ],
+      "used_functions": [
+        "NORMSDIST"
+      ],
+      "complexity": "low",
+      "length": 15
+    },
+    "Sheet1!I35": {
+      "raw_formula": "=I24*I33-I20*EXP(-I15*I19)*I34",
+      "depends_on": [
+        "I20",
+        "I15",
+        "I34",
+        "I33",
+        "I24",
+        "I19"
+      ],
+      "used_functions": [
+        "EXP"
+      ],
+      "complexity": "low",
+      "length": 30
+    },
+    "Sheet1!I36": {
+      "raw_formula": "=I35-I21",
+      "depends_on": [
+        "I21",
+        "I35"
+      ],
+      "used_functions": [],
+      "complexity": "low",
+      "length": 8
+    }
+  },
+  "dependencies": {
+    "Sheet1!E1": {
+      "direct_depends": [],
+      "depended_by": []
+    },
+    "Sheet1!B7": {
+      "direct_depends": [
+        "Sheet1!B5",
+        "Sheet1!B3",
+        "Sheet1!B4"
+      ],
+      "depended_by": []
+    },
+    "Sheet1!B5": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!B7"
+      ]
+    },
+    "Sheet1!B3": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!B7"
+      ]
+    },
+    "Sheet1!B4": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!B7"
+      ]
+    },
+    "Sheet1!I18": {
+      "direct_depends": [
+        "Sheet1!U12:U35"
+      ],
+      "depended_by": []
+    },
+    "Sheet1!U12:U35": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!I18"
+      ]
+    },
+    "Sheet1!I20": {
+      "direct_depends": [
+        "Sheet1!I14",
+        "Sheet1!I13"
+      ],
+      "depended_by": [
+        "Sheet1!I26",
+        "Sheet1!I31",
+        "Sheet1!I35"
+      ]
+    },
+    "Sheet1!I14": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!I20"
+      ]
+    },
+    "Sheet1!I13": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!I20"
+      ]
+    },
+    "Sheet1!I21": {
+      "direct_depends": [
+        "Sheet1!I17",
+        "Sheet1!I16"
+      ],
+      "depended_by": [
+        "Sheet1!I36"
+      ]
+    },
+    "Sheet1!I17": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!I21"
+      ]
+    },
+    "Sheet1!I16": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!I21"
+      ]
+    },
+    "Sheet1!I26": {
+      "direct_depends": [
+        "Sheet1!I24",
+        "Sheet1!I20",
+        "Sheet1!I25"
+      ],
+      "depended_by": [
+        "Sheet1!I27"
+      ]
+    },
+    "Sheet1!I24": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!I26",
+        "Sheet1!I31",
+        "Sheet1!I35"
+      ]
+    },
+    "Sheet1!I25": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!I26",
+        "Sheet1!I31",
+        "Sheet1!I32"
+      ]
+    },
+    "Sheet1!I27": {
+      "direct_depends": [
+        "Sheet1!I26"
+      ],
+      "depended_by": []
+    },
+    "Sheet1!I31": {
+      "direct_depends": [
+        "Sheet1!I20",
+        "Sheet1!I15",
+        "Sheet1!I25",
+        "Sheet1!I24",
+        "Sheet1!I19"
+      ],
+      "depended_by": [
+        "Sheet1!I32",
+        "Sheet1!I33"
+      ]
+    },
+    "Sheet1!I15": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!I31",
+        "Sheet1!I32",
+        "Sheet1!I35"
+      ]
+    },
+    "Sheet1!I19": {
+      "direct_depends": [],
+      "depended_by": [
+        "Sheet1!I31",
+        "Sheet1!I35"
+      ]
+    },
+    "Sheet1!I32": {
+      "direct_depends": [
+        "Sheet1!I15",
+        "Sheet1!I31",
+        "Sheet1!I25"
+      ],
+      "depended_by": [
+        "Sheet1!I34"
+      ]
+    },
+    "Sheet1!I33": {
+      "direct_depends": [
+        "Sheet1!I31"
+      ],
+      "depended_by": [
+        "Sheet1!I35"
+      ]
+    },
+    "Sheet1!I34": {
+      "direct_depends": [
+        "Sheet1!I32"
+      ],
+      "depended_by": [
+        "Sheet1!I35"
+      ]
+    },
+    "Sheet1!I35": {
+      "direct_depends": [
+        "Sheet1!I20",
+        "Sheet1!I15",
+        "Sheet1!I34",
+        "Sheet1!I33",
+        "Sheet1!I24",
+        "Sheet1!I19"
+      ],
+      "depended_by": [
+        "Sheet1!I36"
+      ]
+    },
+    "Sheet1!I36": {
+      "direct_depends": [
+        "Sheet1!I21",
+        "Sheet1!I35"
+      ],
+      "depended_by": []
+    }
+  },
+  "calculation_order": [
+    "Sheet1!E1",
+    "Sheet1!B5",
+    "Sheet1!B3",
+    "Sheet1!B4",
+    "Sheet1!B7",
+    "Sheet1!U12:U35",
+    "Sheet1!I18",
+    "Sheet1!I14",
+    "Sheet1!I13",
+    "Sheet1!I20",
+    "Sheet1!I17",
+    "Sheet1!I16",
+    "Sheet1!I21",
+    "Sheet1!I24",
+    "Sheet1!I25",
+    "Sheet1!I26",
+    "Sheet1!I27",
+    "Sheet1!I15",
+    "Sheet1!I19",
+    "Sheet1!I31",
+    "Sheet1!I32",
+    "Sheet1!I33",
+    "Sheet1!I34",
+    "Sheet1!I35",
+    "Sheet1!I36"
+  ],
+  "data_flow": [
+    {
+      "stage": 1,
+      "description": "輸入參數",
+      "cells": [
+        "Sheet1!B3",
+        "Sheet1!C3",
+        "Sheet1!D3",
+        "Sheet1!E3",
+        "Sheet1!F3",
+        "Sheet1!P3",
+        "Sheet1!B4",
+        "Sheet1!C4",
+        "Sheet1!D4",
+        "Sheet1!E4",
+        "Sheet1!F4",
+        "Sheet1!B5",
+        "Sheet1!C5",
+        "Sheet1!D5",
+        "Sheet1!E5",
+        "Sheet1!F5",
+        "Sheet1!C6",
+        "Sheet1!D6",
+        "Sheet1!E6",
+        "Sheet1!F6",
+        "Sheet1!C7",
+        "Sheet1!D7",
+        "Sheet1!E7",
+        "Sheet1!F7",
+        "Sheet1!I12",
+        "Sheet1!I13",
+        "Sheet1!I14",
+        "Sheet1!I15",
+        "Sheet1!I16",
+        "Sheet1!I19",
+        "Sheet1!I24",
+        "Sheet1!I25",
+        "Sheet1!I41",
+        "Sheet1!I42",
+        "Sheet1!I43",
+        "Sheet1!I44",
+        "Sheet1!I45",
+        "Sheet1!I46",
+        "Sheet1!I47",
+        "Sheet1!I48",
+        "Sheet1!I49",
+        "Sheet1!I53",
+        "Sheet1!I54",
+        "Sheet1!I57",
+        "Sheet1!I58"
+      ],
+      "count": 45
+    },
+    {
+      "stage": 2,
+      "description": "中間計算",
+      "cells": [
+        "Sheet1!I20",
+        "Sheet1!I21",
+        "Sheet1!I26",
+        "Sheet1!I31",
+        "Sheet1!I32",
+        "Sheet1!I33",
+        "Sheet1!I34",
+        "Sheet1!I35"
+      ],
+      "count": 8
+    },
+    {
+      "stage": 3,
+      "description": "輸出結果",
+      "cells": [
+        "Sheet1!E1",
+        "Sheet1!B7",
+        "Sheet1!I18",
+        "Sheet1!I27",
+        "Sheet1!I36"
+      ],
+      "count": 5
+    }
+  ],
+  "vba_code": {
+    "has_vba": true,
+    "note": "VBA 代碼已檢測到，詳細分析需要 python-vba 庫"
+  },
+  "patterns": [],
+  "named_ranges": {},
+  "table_structure": {
+    "Sheet1": {
+      "data_range": "A1:P58",
+      "max_row": 58,
+      "max_column": 16
+    }
+  },
+  "external_links": [],
+  "conditional_formatting": [],
+  "data_validation": []
+}

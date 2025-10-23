@@ -1,0 +1,308 @@
+{
+  "Sheet1": {
+    "E": [
+      {
+        "row": 1,
+        "value": "=1+1+2",
+        "type": "formula"
+      },
+      {
+        "row": 3,
+        "value": 25,
+        "type": "number"
+      },
+      {
+        "row": 4,
+        "value": 19,
+        "type": "number"
+      },
+      {
+        "row": 5,
+        "value": 7,
+        "type": "number"
+      },
+      {
+        "row": 6,
+        "value": 0,
+        "type": "number"
+      },
+      {
+        "row": 7,
+        "value": 6.285714285714286,
+        "type": "number"
+      }
+    ],
+    "B": [
+      {
+        "row": 3,
+        "value": 20,
+        "type": "number"
+      },
+      {
+        "row": 4,
+        "value": 19,
+        "type": "number"
+      },
+      {
+        "row": 5,
+        "value": 7,
+        "type": "number"
+      },
+      {
+        "row": 7,
+        "value": "=(B3+B4)/B5",
+        "type": "formula"
+      }
+    ],
+    "C": [
+      {
+        "row": 3,
+        "value": 23,
+        "type": "number"
+      },
+      {
+        "row": 4,
+        "value": "<openpyxl.worksheet.formula.DataTableFormula object at 0x7b3c616189e0>",
+        "type": "string"
+      },
+      {
+        "row": 5,
+        "value": 7,
+        "type": "number"
+      },
+      {
+        "row": 6,
+        "value": 0,
+        "type": "number"
+      },
+      {
+        "row": 7,
+        "value": 6,
+        "type": "number"
+      }
+    ],
+    "D": [
+      {
+        "row": 3,
+        "value": 24,
+        "type": "number"
+      },
+      {
+        "row": 4,
+        "value": 19,
+        "type": "number"
+      },
+      {
+        "row": 5,
+        "value": 7,
+        "type": "number"
+      },
+      {
+        "row": 6,
+        "value": 0,
+        "type": "number"
+      },
+      {
+        "row": 7,
+        "value": 6.142857142857143,
+        "type": "number"
+      }
+    ],
+    "F": [
+      {
+        "row": 3,
+        "value": 26,
+        "type": "number"
+      },
+      {
+        "row": 4,
+        "value": 19,
+        "type": "number"
+      },
+      {
+        "row": 5,
+        "value": 7,
+        "type": "number"
+      },
+      {
+        "row": 6,
+        "value": 0,
+        "type": "number"
+      },
+      {
+        "row": 7,
+        "value": 6.428571428571429,
+        "type": "number"
+      }
+    ],
+    "P": [
+      {
+        "row": 3,
+        "value": "<openpyxl.worksheet.formula.ArrayFormula object at 0x7b3c61618680>",
+        "type": "string"
+      }
+    ],
+    "I": [
+      {
+        "row": 12,
+        "value": "GTI Limited (3344)",
+        "type": "string"
+      },
+      {
+        "row": 13,
+        "value": 747465,
+        "type": "number"
+      },
+      {
+        "row": 14,
+        "value": 196177,
+        "type": "number"
+      },
+      {
+        "row": 15,
+        "value": 1,
+        "type": "number"
+      },
+      {
+        "row": 16,
+        "value": 6298816,
+        "type": "number"
+      },
+      {
+        "row": 18,
+        "value": "=STDEV(U12:U35)*SQRT(12)",
+        "type": "formula"
+      },
+      {
+        "row": 19,
+        "value": 0.01,
+        "type": "number"
+      },
+      {
+        "row": 20,
+        "value": "=I13+I14/2",
+        "type": "formula"
+      },
+      {
+        "row": 21,
+        "value": "=I16*I17",
+        "type": "formula"
+      },
+      {
+        "row": 24,
+        "value": 1314891.5197805779,
+        "type": "number"
+      },
+      {
+        "row": 25,
+        "value": 0.5227860429506087,
+        "type": "number"
+      },
+      {
+        "row": 26,
+        "value": "=(I24-I20)/(I24*I25)",
+        "type": "formula"
+      },
+      {
+        "row": 27,
+        "value": "=(1-NORMSDIST(I26))/2",
+        "type": "formula"
+      },
+      {
+        "row": 31,
+        "value": "=LN(I24/(I20*EXP(-I19*I15)))/(I25*SQRT(I15))+I25*SQRT(I15)/2",
+        "type": "formula"
+      },
+      {
+        "row": 32,
+        "value": "=I31-I25*SQRT(I15)",
+        "type": "formula"
+      },
+      {
+        "row": 33,
+        "value": "=NORMSDIST(I31)",
+        "type": "formula"
+      },
+      {
+        "row": 34,
+        "value": "=NORMSDIST(I32)",
+        "type": "formula"
+      },
+      {
+        "row": 35,
+        "value": "=I24*I33-I20*EXP(-I15*I19)*I34",
+        "type": "formula"
+      },
+      {
+        "row": 36,
+        "value": "=I35-I21",
+        "type": "formula"
+      },
+      {
+        "row": 41,
+        "value": "Probability",
+        "type": "string"
+      },
+      {
+        "row": 42,
+        "value": 0.0002,
+        "type": "number"
+      },
+      {
+        "row": 43,
+        "value": 0.0033,
+        "type": "number"
+      },
+      {
+        "row": 44,
+        "value": 0.0595,
+        "type": "number"
+      },
+      {
+        "row": 45,
+        "value": 0.8693,
+        "type": "number"
+      },
+      {
+        "row": 46,
+        "value": 0.053,
+        "type": "number"
+      },
+      {
+        "row": 47,
+        "value": 0.0117,
+        "type": "number"
+      },
+      {
+        "row": 48,
+        "value": 0.0012,
+        "type": "number"
+      },
+      {
+        "row": 49,
+        "value": 0.0018,
+        "type": "number"
+      },
+      {
+        "row": 53,
+        "value": "1.65 * s =",
+        "type": "string"
+      },
+      {
+        "row": 54,
+        "value": "2.33 * s =",
+        "type": "string"
+      },
+      {
+        "row": 57,
+        "value": "95% of actual distribution =",
+        "type": "string"
+      },
+      {
+        "row": 58,
+        "value": "99% of actual distribution =",
+        "type": "string"
+      }
+    ]
+  }
+}

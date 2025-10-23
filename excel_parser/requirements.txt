@@ -1,0 +1,13 @@
+# 项目依赖 - 第一阶段（无 AI）
+
+# Excel 处理
+openpyxl>=3.1.0
+
+# VBA 提取（可选但推荐）
+oletools>=0.60
+
+# 数据处理
+pandas>=2.0.0
+numpy>=1.24.0
+
+# 无需 LLM 相关库
