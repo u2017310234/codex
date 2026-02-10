@@ -37,5 +37,5 @@ jobs:
           VPS_IP: ${{ secrets.VPS_IP }}
         run: |
           # Test SSH connection
-          ssh -o StrictHostKeyChecking=no -o ConnectTimeout=10 root@$VPS_IP "echo 'Successfully connected to VPS'; hostname; uptime" || \
+          ssh -o ConnectTimeout=10 root@$VPS_IP "echo 'Successfully connected to VPS'; hostname; uptime" || \
           echo "SSH connection failed. Please check VPS_IP and VPS_M secrets are correctly configured."

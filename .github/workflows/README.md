@@ -17,7 +17,7 @@ Before using this workflow, you need to configure the following GitHub secrets i
 2. Navigate to Settings → Secrets and variables → Actions
 3. Click "New repository secret"
 4. Add the following secrets:
-   - Name: `VPS_IP`, Value: Your VPS IP address (e.g., `192.168.1.100`)
+   - Name: `VPS_IP`, Value: Your VPS IP address (e.g., `203.0.113.10`)
    - Name: `VPS_M`, Value: Your SSH private key (the entire content of your `id_rsa` file)
 
 ### How to Use
@@ -47,5 +47,6 @@ If the SSH connection fails:
 
 - Never commit SSH private keys directly to the repository
 - Always use GitHub Secrets to store sensitive information
-- The workflow uses `StrictHostKeyChecking=no` for convenience, but be aware of security implications
+- The workflow uses `ssh-keyscan` to automatically accept the host key, which may be vulnerable to man-in-the-middle attacks on first connection. For enhanced security, consider manually adding the VPS host key to the workflow or using a known_hosts file.
 - Consider using SSH keys with limited permissions for automation tasks
+- Ensure your VPS firewall allows connections from GitHub Actions IP ranges
