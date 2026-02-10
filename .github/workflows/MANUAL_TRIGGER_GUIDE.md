@@ -12,7 +12,7 @@ Navigate to your repository on GitHub and click the **Actions** tab:
 https://github.com/[username]/[repository]/actions
 ```
 
-![Actions Tab Location](https://docs.github.com/assets/cb-30362/images/help/repository/actions-tab.png)
+**Note**: The Actions tab is typically located in the top navigation bar of your repository, between "Pull requests" and "Projects".
 
 ### Step 2: Find Your Workflow
 
@@ -100,7 +100,7 @@ After triggering the workflow, you should see:
 - Verify the workflow file exists at `.github/workflows/ssh-vps.yml`
 
 ### Workflow fails immediately?
-- Check that secrets `VPS_IP` and `VPS_M` are configured
+- Check that secrets `VPS_IP` (VPS IP address) and `VPS_M` (SSH private key) are configured
 - Verify the secrets have correct values
 - Check workflow permissions
 
