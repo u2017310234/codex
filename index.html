@@ -366,7 +366,11 @@
                 
                 const reader = new FileReader();
                 reader.onload = (event) => {
-                    // Safely create and append image element
+                    // Verify element still exists and safely create image element
+                    if (!qrPlaceholder || !qrPlaceholder.parentNode) {
+                        console.warn('QR placeholder element no longer exists');
+                        return;
+                    }
                     qrPlaceholder.innerHTML = '';
                     const img = document.createElement('img');
                     img.src = event.target.result;
