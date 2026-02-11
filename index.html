@@ -10,9 +10,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         /* === Base Styles === */
+        /* Modern 4-Color Palette:
+           1. Primary: #1e3a8a (Deep Blue)
+           2. Secondary: #f8fafc (Light Background)
+           3. Accent: #06b6d4 (Vibrant Cyan)
+           4. Neutral: #1f2937 (Dark Gray)
+        */
         body { 
             font-family: 'Inter', sans-serif; 
-            background-color: #f3f4f6;
+            background-color: #f8fafc;
             /* Background image placeholder - uncomment and set your image path */
             /* background-image: url('path/to/your/background-image.jpg'); */
             background-size: cover;
@@ -22,7 +28,7 @@
         
         /* === Award Banner Styles === */
         .award-banner {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #1e3a8a;
             color: white;
             padding: 1rem 0;
             text-align: center;
@@ -59,21 +65,21 @@
             width: 200px;
             height: 200px;
             margin: 1rem auto;
-            border: 2px dashed #3B82F6;
+            border: 2px dashed #06b6d4;
             border-radius: 0.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: #f9fafb;
-            color: #6b7280;
+            background-color: #f8fafc;
+            color: #1f2937;
             font-size: 0.875rem;
             cursor: pointer;
             transition: all 0.3s ease;
         }
         
         .qr-code-placeholder:hover {
-            border-color: #2563EB;
-            background-color: #eff6ff;
+            border-color: #06b6d4;
+            background-color: rgba(6, 182, 212, 0.05);
         }
         
         .qr-code-placeholder img {
@@ -86,7 +92,9 @@
         .control-button {
             padding: 0.75rem;
             border-radius: 0.5rem;
-            background-color: #e5e7eb;
+            background-color: #f8fafc;
+            border: 1px solid rgba(30, 58, 138, 0.2);
+            color: #1f2937;
             transition: all 0.2s ease-in-out;
             display: flex;
             align-items: center;
@@ -94,40 +102,43 @@
             font-size: 0.875rem;
             font-weight: 500;
             cursor: pointer;
-            border: none;
         }
         
         .control-button:hover {
-            background-color: #d1d5db;
+            background-color: rgba(6, 182, 212, 0.05);
+            border-color: #06b6d4;
         }
         
         .control-button.on {
-            background-color: #FAF9F6 !important;
-            color: black !important;
-            box-shadow: 0 0 15px rgba(16, 185, 129, 0.5);
+            background-color: #1e3a8a !important;
+            color: white !important;
+            border-color: #1e3a8a !important;
+            box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
         }
         
         .control-button.on svg {
-            stroke: black;
+            stroke: white;
         }
         
         /* === Range Button Styles === */
         #range_pane span {
             cursor: pointer;
             padding: 6px 12px;
-            border: 1px solid #d1d5db;
+            border: 1px solid rgba(30, 58, 138, 0.2);
             border-radius: 9999px;
+            color: #1f2937;
             transition: all 0.2s ease-in-out;
         }
         
         #range_pane span:hover {
-            background-color: #e5e7eb;
+            background-color: rgba(6, 182, 212, 0.05);
+            border-color: #06b6d4;
         }
         
         #range_pane span.on {
-            background-color: #3B82F6;
+            background-color: #06b6d4;
             color: white;
-            border-color: #2563EB;
+            border-color: #06b6d4;
         }
         
         /* === Canvas Styles === */
@@ -148,24 +159,25 @@
         #transcriptContainer {
             height: 200px;
             overflow-y: auto;
-            border: 1px solid #d1d5db;
+            border: 1px solid rgba(30, 58, 138, 0.2);
             border-radius: 0.5rem;
             padding: 15px;
             line-height: 1.6;
-            background-color: #fafafa;
+            background-color: white;
         }
         
         .transcript-item {
             transition: background-color 0.2s;
+            color: #1f2937;
         }
         
         .transcript-item:hover {
-            background-color: #f3f4f6;
+            background-color: #f8fafc;
         }
         
         .transcript-item.active {
-            background-color: #dbeafe;
-            border-left: 4px solid #3b82f6;
+            background-color: rgba(6, 182, 212, 0.1);
+            border-left: 4px solid #06b6d4;
         }
         
         /* === Mobile Responsive Styles === */
@@ -190,7 +202,7 @@
         }
     </style>
 </head>
-<body class="text-gray-800">
+<body class="text-gray-800" style="color: #1f2937;">
     <!-- Award Banner Section -->
     <div class="award-banner">
         <h1>🏆 WAIC2025世界人工智能大会参展项目 🏆</h1>
@@ -198,16 +210,16 @@
     
     <!-- 悬浮语言下拉菜单 -->
     <div class="fixed top-4 right-4 z-50" id="langDropdown">
-        <button id="langToggle" class="flex items-center gap-2 px-3 py-2 bg-white hover:bg-gray-50 text-gray-700 text-sm rounded-lg shadow-lg border border-gray-200 transition-all duration-200">
+        <button id="langToggle" class="flex items-center gap-2 px-3 py-2 bg-white hover:bg-gray-50 text-sm rounded-lg shadow-lg border transition-all duration-200" style="color: #1f2937; border-color: rgba(30, 58, 138, 0.2);">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
             <span id="currentLang">English</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"></polyline></svg>
         </button>
-        <div id="langMenu" class="absolute top-full right-0 mt-2 w-32 bg-white rounded-lg shadow-xl border border-gray-200 py-1 hidden">
-            <button class="lang-option w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors" data-lang="en">
+        <div id="langMenu" class="absolute top-full right-0 mt-2 w-32 bg-white rounded-lg shadow-xl py-1 hidden" style="border: 1px solid rgba(30, 58, 138, 0.2);">
+            <button class="lang-option w-full text-left px-3 py-2 text-sm transition-colors" style="color: #1f2937;" onmouseover="this.style.backgroundColor='rgba(6, 182, 212, 0.1)'; this.style.color='#06b6d4';" onmouseout="this.style.backgroundColor=''; this.style.color='#1f2937';" data-lang="en">
                 English
             </button>
-            <button class="lang-option w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors" data-lang="zh">
+            <button class="lang-option w-full text-left px-3 py-2 text-sm transition-colors" style="color: #1f2937;" onmouseover="this.style.backgroundColor='rgba(6, 182, 212, 0.1)'; this.style.color='#06b6d4';" onmouseout="this.style.backgroundColor=''; this.style.color='#1f2937';" data-lang="zh">
                 中文
             </button>
         </div>
@@ -273,12 +285,12 @@
         
         <!-- QR Code Section -->
         <div class="qr-code-section">
-            <h3 class="text-lg font-semibold text-gray-800 mb-2">扫码分享 / 移动端长按保存</h3>
+            <h3 class="text-lg font-semibold mb-2" style="color: #1f2937;">扫码分享 / 移动端长按保存</h3>
             <div class="qr-code-placeholder" id="qrCodePlaceholder" role="button" tabindex="0" aria-label="点击上传二维码图片">
                 <span>📱 二维码占位区域 点击上传二维码图片</span>
                 <!-- Placeholder for QR code image - can be replaced with actual QR code -->
             </div>
-            <p class="text-sm text-gray-600 mt-2">电脑端可扫码访问，移动端可长按保存二维码</p>
+            <p class="text-sm mt-2" style="color: #1f2937;">电脑端可扫码访问，移动端可长按保存二维码</p>
         </div>
 
     </div>
@@ -725,7 +737,7 @@
       }
 
     function draw() {
-      background(255);
+      background('#f8fafc');
       data.pitch = null;
 
       data.mousemove_pitch = piano.mouseToPitch();
@@ -1817,16 +1829,16 @@
         this.buffer = new Buffer(this.width, this.height);
         for (var x = 0; x < this.width; x++) {
           for (var y = 0; y < this.height; y++) {
-            this.buffer.fillPoint(x, y, color('#FAF9F6'));
+            this.buffer.fillPoint(x, y, color('#f8fafc'));
           }
         }
         var cache = new Array(101);
-      var whiteColor = color('#FAF9F6'); 
-      var redColor = data.fill_color; 
+      var whiteColor = color('#f8fafc'); 
+      var accentColor = data.fill_color; 
 
       for (var db = 0; db <= 100; db++) {
           var percent = db / 100;
-          cache[db] = lerpColor(whiteColor, redColor, percent);
+          cache[db] = lerpColor(whiteColor, accentColor, percent);
       }
       this.color_cache = cache;
       },
@@ -2137,29 +2149,29 @@ var pitchLadder = {
       range_name: 'man_high',
 
       color_alpha: 220,
-      spec_background_color: '#FAF9F6',
-      fill_color: '#FF0000',
-      stroke_color: '#FF0000',
-      spec_text_color: '#212121',
+      spec_background_color: '#f8fafc',
+      fill_color: '#06b6d4',
+      stroke_color: '#06b6d4',
+      spec_text_color: '#1f2937',
 
-      vspec_pitch_color: '#F44336',
+      vspec_pitch_color: '#06b6d4',
       vspec_color_cache: true,
 
-      pitch_color: '#F44336',
-      range_color: 'rgba(33, 150, 243, 0.2)',
-      man_pitch_color: '#64B5F6',
-      woman_pitch_color: '#E64A19',
+      pitch_color: '#06b6d4',
+      range_color: 'rgba(30, 58, 138, 0.15)',
+      man_pitch_color: '#1e3a8a',
+      woman_pitch_color: '#06b6d4',
 
-      overtone_color: '#F57F17',
-      mouse_pitch_color: '#F9A825',
-      mouse_pitch_piano_color: '#F9A825',
-      line_color: '#9E9D24',
+      overtone_color: '#1e3a8a',
+      mouse_pitch_color: '#1f2937',
+      mouse_pitch_piano_color: '#1f2937',
+      line_color: '#1f2937',
       line_value: 4000,
 
-      border_color: '#FAF9F6',
+      border_color: '#f8fafc',
 
       piano_white_color: '#FFFFFF',
-      piano_black_color: '#000000',
+      piano_black_color: '#1f2937',
 
       getTop: function(left, right) {
         var max_eng = 0;
