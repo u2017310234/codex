@@ -1,0 +1,52 @@
+name: Tophub Entertainment Daily
+
+on:
+  schedule:
+    - cron: "15 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  TOPHUB_URL: https://tophub.today/c/ent
+  # Prefer GEMINI_API_KEY, but support an existing secret named GEMINI.
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+  GEMINI: ${{ secrets.GEMINI }}
+  # Optional: if unset, the script defaults to gemini-2.5-flash.
+  GEMINI_MODEL: ${{ secrets.GEMINI_MODEL }}
+  OUTPUT_DIR: output
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Run crawler and summarizer
+        run: node scripts/tophub_entertainment.mjs
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: tophub-entertainment
+          path: output/
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # output/ is gitignored; force-add so CI can persist results.
+          git add -f output
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: update tophub entertainment summary"
+            git push
+          fi
