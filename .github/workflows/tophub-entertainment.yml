@@ -2,7 +2,8 @@ name: Tophub Entertainment Daily
 
 on:
   schedule:
-    - cron: "15 1 * * *"
+    - cron: "15 1 * * *"   # 09:15 Asia/Shanghai
+    - cron: "30 10 * * *"  # 18:30 Asia/Shanghai
   workflow_dispatch:
 
 permissions:
