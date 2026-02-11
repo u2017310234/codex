@@ -200,6 +200,16 @@
                 height: 160px;
             }
         }
+        
+        /* === Language Dropdown Styles === */
+        .lang-option {
+            color: #1f2937;
+        }
+        
+        .lang-option:hover {
+            background-color: rgba(6, 182, 212, 0.1);
+            color: #06b6d4;
+        }
     </style>
 </head>
 <body class="text-gray-800" style="color: #1f2937;">
@@ -216,10 +226,10 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6,9 12,15 18,9"></polyline></svg>
         </button>
         <div id="langMenu" class="absolute top-full right-0 mt-2 w-32 bg-white rounded-lg shadow-xl py-1 hidden" style="border: 1px solid rgba(30, 58, 138, 0.2);">
-            <button class="lang-option w-full text-left px-3 py-2 text-sm transition-colors" style="color: #1f2937;" onmouseover="this.style.backgroundColor='rgba(6, 182, 212, 0.1)'; this.style.color='#06b6d4';" onmouseout="this.style.backgroundColor=''; this.style.color='#1f2937';" data-lang="en">
+            <button class="lang-option w-full text-left px-3 py-2 text-sm transition-colors" data-lang="en">
                 English
             </button>
-            <button class="lang-option w-full text-left px-3 py-2 text-sm transition-colors" style="color: #1f2937;" onmouseover="this.style.backgroundColor='rgba(6, 182, 212, 0.1)'; this.style.color='#06b6d4';" onmouseout="this.style.backgroundColor=''; this.style.color='#1f2937';" data-lang="zh">
+            <button class="lang-option w-full text-left px-3 py-2 text-sm transition-colors" data-lang="zh">
                 中文
             </button>
         </div>
@@ -1833,12 +1843,12 @@
           }
         }
         var cache = new Array(101);
-      var whiteColor = color('#f8fafc'); 
-      var accentColor = data.fill_color; 
+      var backgroundColor = color('#f8fafc'); 
+      var fillColor = data.fill_color; 
 
       for (var db = 0; db <= 100; db++) {
           var percent = db / 100;
-          cache[db] = lerpColor(whiteColor, accentColor, percent);
+          cache[db] = lerpColor(backgroundColor, fillColor, percent);
       }
       this.color_cache = cache;
       },
