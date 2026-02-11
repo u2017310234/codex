@@ -274,8 +274,8 @@
         <!-- QR Code Section -->
         <div class="qr-code-section">
             <h3 class="text-lg font-semibold text-gray-800 mb-2">扫码分享 / 移动端长按保存</h3>
-            <div class="qr-code-placeholder" id="qrCodePlaceholder">
-                <span>📱 二维码占位区域<br>点击上传二维码图片</span>
+            <div class="qr-code-placeholder" id="qrCodePlaceholder" role="button" tabindex="0" aria-label="点击上传二维码图片">
+                <span>📱 二维码占位区域 点击上传二维码图片</span>
                 <!-- Placeholder for QR code image - can be replaced with actual QR code -->
             </div>
             <p class="text-sm text-gray-600 mt-2">电脑端可扫码访问，移动端可长按保存二维码</p>
@@ -333,21 +333,53 @@
             qrInput.id = 'qrCodeInput';
             document.body.appendChild(qrInput);
             
-            // Handle click on placeholder
-            qrPlaceholder.addEventListener('click', () => {
+            // Handle click and keyboard events on placeholder
+            const openFileDialog = () => {
                 qrInput.click();
+            };
+            
+            qrPlaceholder.addEventListener('click', openFileDialog);
+            qrPlaceholder.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openFileDialog();
+                }
             });
             
-            // Handle file selection
+            // Handle file selection with validation
             qrInput.addEventListener('change', (e) => {
                 const file = e.target.files[0];
-                if (file && file.type.startsWith('image/')) {
-                    const reader = new FileReader();
-                    reader.onload = (event) => {
-                        qrPlaceholder.innerHTML = `<img src="${event.target.result}" alt="QR Code" style="max-width: 100%; max-height: 100%;">`;
-                    };
-                    reader.readAsDataURL(file);
+                if (!file) return;
+                
+                // Validate file type
+                if (!file.type.startsWith('image/')) {
+                    alert(Locale.currentLang === 'zh' ? '请上传图片文件' : 'Please upload an image file');
+                    return;
                 }
+                
+                // Validate file size (max 5MB)
+                const maxSize = 5 * 1024 * 1024; // 5MB
+                if (file.size > maxSize) {
+                    alert(Locale.currentLang === 'zh' ? '图片文件不能超过5MB' : 'Image file size must not exceed 5MB');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    // Safely create and append image element
+                    qrPlaceholder.innerHTML = '';
+                    const img = document.createElement('img');
+                    img.src = event.target.result;
+                    img.alt = 'QR Code';
+                    img.style.maxWidth = '100%';
+                    img.style.maxHeight = '100%';
+                    img.style.objectFit = 'contain';
+                    qrPlaceholder.appendChild(img);
+                };
+                reader.onerror = () => {
+                    alert(Locale.currentLang === 'zh' ? '图片加载失败，请重试' : 'Failed to load image, please try again');
+                };
+                reader.readAsDataURL(file);
             });
         }
     
