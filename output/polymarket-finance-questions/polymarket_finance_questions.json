@@ -1,0 +1,73 @@
+{
+  "questions": [
+    {
+      "title": "Will Nebius say \"TripleTen\" or \"Triple Ten\" during earnings call?",
+      "url": "https://polymarket.com/market/earnings-mentions-nebius-2026-02-18-tripleten-triple-ten-1-times",
+      "category": "finance",
+      "endDate": "2026-02-19",
+      "yesPrice": 0.335,
+      "noPrice": 0.665
+    },
+    {
+      "title": "Will Coinbase say \"Custodial\" or \"Custody\" during earnings call?",
+      "url": "https://polymarket.com/market/earnings-mentions-coinbase-2026-02-19-custodial-custody-1-times",
+      "category": "finance",
+      "endDate": "2026-02-20",
+      "yesPrice": 0.969,
+      "noPrice": 0.031
+    },
+    {
+      "title": "Will CryptoPunks floor price reach 50 ETH before 2027?",
+      "url": "https://polymarket.com/market/will-cryptopunks-floor-price-reach-50-eth-before-2027",
+      "category": "finance",
+      "endDate": "2027-01-01",
+      "yesPrice": 0.21,
+      "noPrice": 0.79
+    },
+    {
+      "title": "Will CryptoPunks floor price dip to 10 ETH before 2027?",
+      "url": "https://polymarket.com/market/will-cryptopunks-floor-price-dip-to-10-eth-before-2027",
+      "category": "finance",
+      "endDate": "2027-01-01",
+      "yesPrice": 0.14,
+      "noPrice": 0.86
+    }
+  ],
+  "meta": {
+    "source": "api",
+    "cached": false,
+    "totalCount": 10000,
+    "filteredCount": 28,
+    "usedTags": [
+      "finance",
+      "equities",
+      "stocks",
+      "earnings",
+      "crypto",
+      "commodities"
+    ],
+    "usedKeywords": [],
+    "excludedKeywords": [
+      "fed",
+      "federal reserve",
+      "interest rate",
+      "rate cut",
+      "rate hike",
+      "cpi",
+      "inflation",
+      "gdp",
+      "ecb",
+      "boj",
+      "treasury",
+      "yield",
+      "unemployment"
+    ],
+    "focus": "micro",
+    "sort": "volume",
+    "sortField": "volume24hr",
+    "dedupMode": "coarse",
+    "dedupThreshold": 0.82,
+    "dedupRemoved": 24,
+    "warnings": []
+  }
+}
