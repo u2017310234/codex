@@ -1,4 +1,16 @@
-# TopHub Entertainment Daily (Gemini)
+# Codex
+
+This repository contains:
+
+1. **米粒太声乐助手 (Music Vocal Assistant)** - A web application for vocal training and audio analysis
+2. **TopHub Entertainment Daily** - An automated entertainment news aggregator
+
+## Live Demo
+
+The web application is deployed via GitHub Pages and can be accessed at:
+https://u2017310234.github.io/codex/
+
+## TopHub Entertainment Daily (Gemini)
 
 Daily GitHub Action that:
 
