@@ -1,6 +1,13 @@
 name: Polymarket Finance Questions
 
 on:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/polymarket-finance-questions.yml"
+      - "scripts/polymarket_finance_questions.py"
+      - "scripts/sample_input.json"
   schedule:
     - cron: "10 */6 * * *"
   workflow_dispatch:
