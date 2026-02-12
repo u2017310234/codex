@@ -5,16 +5,16 @@
       "url": "https://polymarket.com/market/earnings-mentions-nebius-2026-02-18-tripleten-triple-ten-1-times",
       "category": "finance",
       "endDate": "2026-02-19",
-      "yesPrice": 0.335,
-      "noPrice": 0.665
+      "yesPrice": 0.47,
+      "noPrice": 0.53
     },
     {
       "title": "Will Coinbase say \"Custodial\" or \"Custody\" during earnings call?",
       "url": "https://polymarket.com/market/earnings-mentions-coinbase-2026-02-19-custodial-custody-1-times",
       "category": "finance",
       "endDate": "2026-02-20",
-      "yesPrice": 0.969,
-      "noPrice": 0.031
+      "yesPrice": 0.965,
+      "noPrice": 0.035
     },
     {
       "title": "Will CryptoPunks floor price reach 50 ETH before 2027?",
@@ -29,8 +29,8 @@
       "url": "https://polymarket.com/market/will-cryptopunks-floor-price-dip-to-10-eth-before-2027",
       "category": "finance",
       "endDate": "2027-01-01",
-      "yesPrice": 0.14,
-      "noPrice": 0.86
+      "yesPrice": 0.15,
+      "noPrice": 0.85
     }
   ],
   "meta": {
