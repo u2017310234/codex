@@ -1,0 +1,51 @@
+name: Gap Observation Note
+description: Generate a gap-driven observation note in Chinese using Gemini.
+inputs:
+  observation:
+    description: Raw observation text to rewrite into a structured note.
+    required: true
+  scenario:
+    description: Optional scenario context for the observation.
+    required: false
+  perspective:
+    description: Optional observer perspective.
+    required: false
+  output_dir:
+    description: Output directory for generated notes.
+    required: false
+    default: output/observing
+  gemini_api_key:
+    description: Gemini API key. If omitted, GEMINI_API_KEY or GEMINI env will be used.
+    required: false
+  gemini_model:
+    description: Gemini model to use.
+    required: false
+    default: gemini-2.5-flash
+outputs:
+  note_path:
+    description: Full path to the generated note.
+    value: ${{ steps.generate.outputs.note_path }}
+  note_dir:
+    description: Output directory path.
+    value: ${{ steps.generate.outputs.note_dir }}
+  note_filename:
+    description: Filename of the generated note.
+    value: ${{ steps.generate.outputs.note_filename }}
+runs:
+  using: composite
+  steps:
+    - name: Setup Node
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
+    - name: Generate observation note
+      id: generate
+      shell: bash
+      env:
+        OBSERVATION: ${{ inputs.observation }}
+        SCENARIO: ${{ inputs.scenario }}
+        PERSPECTIVE: ${{ inputs.perspective }}
+        OUTPUT_DIR: ${{ inputs.output_dir }}
+        ACTION_GEMINI_API_KEY: ${{ inputs.gemini_api_key }}
+        ACTION_GEMINI_MODEL: ${{ inputs.gemini_model }}
+      run: node "${{ github.action_path }}/generate_observation.mjs"
