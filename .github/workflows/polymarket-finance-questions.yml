@@ -1,0 +1,188 @@
+name: Polymarket Finance Questions
+
+on:
+  schedule:
+    - cron: "10 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Max number of questions
+        required: false
+        default: "20"
+        type: string
+      tags:
+        description: Comma-separated tags filter
+        required: false
+        default: "finance,equities,stocks,earnings,crypto,commodities"
+        type: string
+      keywords:
+        description: Comma-separated keyword filter
+        required: false
+        default: ""
+        type: string
+      exclude_keywords:
+        description: Comma-separated exclusion keywords
+        required: false
+        default: "fed,federal reserve,interest rate,rate cut,rate hike,cpi,inflation,gdp,ecb,boj,treasury,yield,unemployment"
+        type: string
+      focus:
+        description: Finance focus
+        required: false
+        default: micro
+        type: choice
+        options:
+          - micro
+          - macro
+          - all
+      sort:
+        description: Sort mode
+        required: false
+        default: volume
+        type: choice
+        options:
+          - volume
+          - endDate
+          - none
+      dedup_mode:
+        description: Dedup mode for similar titles
+        required: false
+        default: coarse
+        type: choice
+        options:
+          - coarse
+          - fuzzy
+          - exact
+          - none
+      dedup_threshold:
+        description: Fuzzy dedup threshold (0-1)
+        required: false
+        default: "0.82"
+        type: string
+      translate:
+        description: Translate title with DeepL
+        required: false
+        default: false
+        type: boolean
+      translate_to:
+        description: Translation target language
+        required: false
+        default: "ZH"
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    env:
+      POLYMARKET_TRANSLATE_API_KEY: ${{ secrets.POLYMARKET_TRANSLATE_API_KEY }}
+      POLYMARKET_TRANSLATE_ENDPOINT: ${{ secrets.POLYMARKET_TRANSLATE_ENDPOINT }}
+      OUTPUT_DIR: output/polymarket-finance-questions
+      OUTPUT_FILE: output/polymarket-finance-questions/polymarket_finance_questions.json
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Resolve inputs
+        id: resolved
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          LIMIT="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.limit || '20' }}"
+          TAGS="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.tags || 'finance,equities,stocks,earnings,crypto,commodities' }}"
+          KEYWORDS="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.keywords || '' }}"
+          EXCLUDE_KEYWORDS="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.exclude_keywords || 'fed,federal reserve,interest rate,rate cut,rate hike,cpi,inflation,gdp,ecb,boj,treasury,yield,unemployment' }}"
+          FOCUS="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.focus || 'micro' }}"
+          SORT="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.sort || 'volume' }}"
+          DEDUP_MODE="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dedup_mode || 'coarse' }}"
+          DEDUP_THRESHOLD="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dedup_threshold || '0.82' }}"
+          TRANSLATE="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.translate || 'false' }}"
+          TRANSLATE_TO="${{ github.event_name == 'workflow_dispatch' && github.event.inputs.translate_to || 'ZH' }}"
+
+          {
+            echo "limit=$LIMIT"
+            echo "tags=$TAGS"
+            echo "keywords=$KEYWORDS"
+            echo "exclude_keywords=$EXCLUDE_KEYWORDS"
+            echo "focus=$FOCUS"
+            echo "sort=$SORT"
+            echo "dedup_mode=$DEDUP_MODE"
+            echo "dedup_threshold=$DEDUP_THRESHOLD"
+            echo "translate=$TRANSLATE"
+            echo "translate_to=$TRANSLATE_TO"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Run collector
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$OUTPUT_DIR"
+
+          ARGS=(
+            --limit "${{ steps.resolved.outputs.limit }}"
+            --tags "${{ steps.resolved.outputs.tags }}"
+            --focus "${{ steps.resolved.outputs.focus }}"
+            --sort "${{ steps.resolved.outputs.sort }}"
+            --dedup-mode "${{ steps.resolved.outputs.dedup_mode }}"
+            --dedup-threshold "${{ steps.resolved.outputs.dedup_threshold }}"
+            --cache-ttl 1800
+          )
+
+          if [ -n "${{ steps.resolved.outputs.keywords }}" ]; then
+            ARGS+=(--keywords "${{ steps.resolved.outputs.keywords }}")
+          fi
+          if [ -n "${{ steps.resolved.outputs.exclude_keywords }}" ]; then
+            ARGS+=(--exclude-keywords "${{ steps.resolved.outputs.exclude_keywords }}")
+          fi
+
+          if [ "${{ steps.resolved.outputs.translate }}" = "true" ]; then
+            ARGS+=(--translate --translate-to "${{ steps.resolved.outputs.translate_to }}")
+          fi
+
+          python scripts/polymarket_finance_questions.py "${ARGS[@]}" > "$OUTPUT_FILE"
+
+      - name: Validate JSON output
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json
+          import os
+          from pathlib import Path
+
+          data = json.loads(Path(os.environ["OUTPUT_FILE"]).read_text(encoding="utf-8"))
+          assert isinstance(data, dict), "root must be object"
+          assert isinstance(data.get("questions"), list), "questions must be list"
+          assert isinstance(data.get("meta"), dict), "meta must be object"
+          print(f"Validated questions: {len(data['questions'])}")
+          PY
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: polymarket-finance-questions
+          path: ${{ env.OUTPUT_FILE }}
+
+      - name: Commit and push output
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -f "$OUTPUT_DIR"
+          if git diff --cached --quiet; then
+            echo "No output changes to commit."
+          else
+            git commit -m "chore: update polymarket finance questions output"
+            git push
+          fi

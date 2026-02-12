@@ -1,0 +1,110 @@
+{
+  "markets": [
+    {
+      "id": "m1",
+      "question": "Will the Fed cut interest rates before July 2026?",
+      "slug": "fed-rate-cut-2026",
+      "active": true,
+      "closed": false,
+      "archived": false,
+      "endDate": "2026-07-01T00:00:00Z",
+      "volume24hr": 145230.7,
+      "volume": 3521000.5,
+      "outcomes": [
+        "Yes",
+        "No"
+      ],
+      "outcomePrices": [
+        0.63,
+        0.37
+      ],
+      "tags": [
+        {
+          "name": "finance"
+        },
+        {
+          "name": "macro"
+        },
+        {
+          "name": "rates"
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "question": "Will BTC trade above $120k by end of 2026?",
+      "slug": "btc-120k-2026",
+      "active": true,
+      "closed": false,
+      "archived": false,
+      "endDate": "2026-12-31T23:59:59Z",
+      "volume24hr": 95610.1,
+      "volume": 1800120.0,
+      "yesPrice": 0.41,
+      "noPrice": 0.59,
+      "tags": [
+        {
+          "name": "crypto"
+        },
+        {
+          "name": "finance"
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "question": "Will gold close above $2,800 in 2026?",
+      "slug": "gold-2800-2026",
+      "active": true,
+      "closed": false,
+      "archived": false,
+      "endDate": "2026-12-31",
+      "volume24h": 35640.2,
+      "volume": 700450.3,
+      "outcomes": "[\"Yes\",\"No\"]",
+      "outcomePrices": "[0.35,0.65]",
+      "tags": [
+        "commodities",
+        "finance"
+      ]
+    },
+    {
+      "id": "m4",
+      "question": "Will the Lakers win the NBA Finals?",
+      "slug": "lakers-finals-2026",
+      "active": true,
+      "closed": false,
+      "archived": false,
+      "endDate": "2026-06-30",
+      "volume24hr": 42000.0,
+      "volume": 580100.0,
+      "tags": [
+        {
+          "name": "sports"
+        }
+      ]
+    },
+    {
+      "id": "m5",
+      "question": "Will US CPI YoY be below 2.5% in Q4 2024?",
+      "slug": "us-cpi-q4-2024",
+      "active": false,
+      "closed": true,
+      "archived": false,
+      "endDate": "2024-12-31T23:59:59Z",
+      "volume24hr": 120.0,
+      "volume": 350000.0,
+      "tags": [
+        {
+          "name": "macro"
+        },
+        {
+          "name": "inflation"
+        },
+        {
+          "name": "finance"
+        }
+      ]
+    }
+  ]
+}
