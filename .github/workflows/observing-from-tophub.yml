@@ -1,11 +1,9 @@
 name: Observing From Tophub
 
 on:
-  workflow_run:
-    workflows:
-      - Tophub Entertainment Daily
-    types:
-      - completed
+  schedule:
+    - cron: "20 1 * * *"   # 09:20 Asia/Shanghai
+    - cron: "35 10 * * *"  # 18:35 Asia/Shanghai
   workflow_dispatch:
 
 permissions:
@@ -18,14 +16,13 @@ env:
 
 jobs:
   generate:
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event_name == 'workflow_run' && github.event.workflow_run.head_branch || github.ref_name }}
+          ref: ${{ github.ref_name }}
 
       - name: Validate Gemini secret
         shell: bash
@@ -34,11 +31,6 @@ jobs:
             echo "Missing GEMINI_API_KEY (or GEMINI) secret."
             exit 1
           fi
-
-      - name: Wait 5 minutes after Tophub workflow
-        if: ${{ github.event_name == 'workflow_run' }}
-        shell: bash
-        run: sleep 300
 
       - name: Extract five hot events from output/summary.md
         id: extract
