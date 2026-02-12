@@ -35,6 +35,11 @@ jobs:
             exit 1
           fi
 
+      - name: Wait 5 minutes after Tophub workflow
+        if: ${{ github.event_name == 'workflow_run' }}
+        shell: bash
+        run: sleep 300
+
       - name: Extract five hot events from output/summary.md
         id: extract
         shell: bash
