@@ -1,22 +1,6 @@
 {
   "questions": [
     {
-      "title": "Will Coinbase say \"Blockchain\" during earnings call?",
-      "url": "https://polymarket.com/market/earnings-mentions-coinbase-2026-02-19-blockchain-1-times",
-      "category": "finance",
-      "endDate": "2026-02-20",
-      "yesPrice": 0.0045,
-      "noPrice": 0.9955
-    },
-    {
-      "title": "Will Nebius say \"TripleTen\" or \"Triple Ten\" during earnings call?",
-      "url": "https://polymarket.com/market/earnings-mentions-nebius-2026-02-18-tripleten-triple-ten-1-times",
-      "category": "finance",
-      "endDate": "2026-02-19",
-      "yesPrice": 0.0055,
-      "noPrice": 0.9945
-    },
-    {
       "title": "Will CryptoPunks floor price reach 50 ETH before 2027?",
       "url": "https://polymarket.com/market/will-cryptopunks-floor-price-reach-50-eth-before-2027",
       "category": "finance",
@@ -37,7 +21,7 @@
     "source": "api",
     "cached": false,
     "totalCount": 10000,
-    "filteredCount": 9,
+    "filteredCount": 3,
     "usedTags": [
       "finance",
       "equities",
@@ -67,7 +51,7 @@
     "sortField": "volume24hr",
     "dedupMode": "coarse",
     "dedupThreshold": 0.82,
-    "dedupRemoved": 5,
+    "dedupRemoved": 1,
     "warnings": []
   }
 }
