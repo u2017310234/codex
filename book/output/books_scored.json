@@ -1,0 +1,278 @@
+[
+  {
+    "title": "社会契约论",
+    "author": "让-雅克·卢梭",
+    "publisher": "商务印书馆",
+    "publish_date": "2025-08-01",
+    "print_info": "首版首印",
+    "isbn": "9787100042001",
+    "binding": "hardcover",
+    "is_first_edition": true,
+    "is_first_print": true,
+    "is_limited": false,
+    "is_signed": false,
+    "price_list": 88.0,
+    "price_now": 92.0,
+    "stock_status": "in_stock",
+    "listing_date": "2025-09-10",
+    "jd_url": "https://example.com/jd/1",
+    "second_hand_premium": null,
+    "rating": 9.2,
+    "rating_count": 52000,
+    "tags": [
+      "政治哲学",
+      "经典",
+      "思想"
+    ],
+    "awards": [
+      "经典译本"
+    ],
+    "adapted": false,
+    "review_keywords": [
+      "经典",
+      "政治哲学",
+      "社会契约"
+    ],
+    "author_bio": "启蒙时代思想家，影响现代政治哲学。",
+    "structured_score": 58.0,
+    "structured_components": {
+      "total": 58.0,
+      "version": 20.0,
+      "author": 13.0,
+      "consensus": 10,
+      "theme": 15,
+      "market": 0.0,
+      "penalized": false
+    },
+    "llm": {
+      "classic_potential": 8.5,
+      "era_significance": 7.0,
+      "ip_potential": 4.0,
+      "structured_adjustment": 5.0,
+      "confidence": 70.0,
+      "rationale": "Mock heuristic based on tags and keywords."
+    },
+    "structured_score_adjusted": 63.0,
+    "final_score": 68.0,
+    "tier": "可观察"
+  },
+  {
+    "title": "资本与秩序：经济思想史",
+    "author": "王珊",
+    "publisher": "中国人民大学出版社",
+    "publish_date": "2024-12-01",
+    "print_info": "一版一印",
+    "isbn": "9787300312345",
+    "binding": "hardcover",
+    "is_first_edition": true,
+    "is_first_print": true,
+    "is_limited": false,
+    "is_signed": true,
+    "price_list": 98.0,
+    "price_now": 118.0,
+    "stock_status": "low_stock",
+    "listing_date": "2025-01-10",
+    "jd_url": "https://example.com/jd/4",
+    "second_hand_premium": null,
+    "rating": 9.0,
+    "rating_count": 12000,
+    "tags": [
+      "经济思想",
+      "历史",
+      "政治经济"
+    ],
+    "awards": [
+      "国家级奖项"
+    ],
+    "adapted": false,
+    "review_keywords": [
+      "体系完整",
+      "学术价值"
+    ],
+    "author_bio": "经济思想史学者，长期研究制度演化。",
+    "structured_score": 58.0,
+    "structured_components": {
+      "total": 58.0,
+      "version": 25.0,
+      "author": 5.0,
+      "consensus": 5,
+      "theme": 15,
+      "market": 8.0,
+      "penalized": false
+    },
+    "llm": {
+      "classic_potential": 0,
+      "era_significance": 0,
+      "ip_potential": 0,
+      "structured_adjustment": 0,
+      "confidence": 0,
+      "rationale": ""
+    },
+    "structured_score_adjusted": 58.0,
+    "final_score": 58.0,
+    "tier": "阅读价值为主"
+  },
+  {
+    "title": "城市与社会：现代性进程",
+    "author": "李明",
+    "publisher": "上海人民出版社",
+    "publish_date": "2025-11-15",
+    "print_info": "首版首印",
+    "isbn": "9787208177777",
+    "binding": "hardcover",
+    "is_first_edition": true,
+    "is_first_print": true,
+    "is_limited": true,
+    "is_signed": false,
+    "price_list": 128.0,
+    "price_now": 128.0,
+    "stock_status": "out_of_stock",
+    "listing_date": "2025-12-01",
+    "jd_url": "https://example.com/jd/2",
+    "second_hand_premium": null,
+    "rating": 8.6,
+    "rating_count": 4200,
+    "tags": [
+      "社会学",
+      "城市研究",
+      "现代性"
+    ],
+    "awards": [],
+    "adapted": false,
+    "review_keywords": [
+      "理论扎实",
+      "方法论"
+    ],
+    "author_bio": "城市社会学研究者，近年出版多部学术著作。",
+    "structured_score": 50.0,
+    "structured_components": {
+      "total": 50.0,
+      "version": 25.0,
+      "author": 0.0,
+      "consensus": 5,
+      "theme": 15,
+      "market": 5.0,
+      "penalized": false
+    },
+    "llm": {
+      "classic_potential": 0,
+      "era_significance": 0,
+      "ip_potential": 0,
+      "structured_adjustment": 0,
+      "confidence": 0,
+      "rationale": ""
+    },
+    "structured_score_adjusted": 50.0,
+    "final_score": 50.0,
+    "tier": "阅读价值为主"
+  },
+  {
+    "title": "热梗小说：短视频时代",
+    "author": "陈凯",
+    "publisher": "作家出版社",
+    "publish_date": "2025-10-01",
+    "print_info": "首版首印",
+    "isbn": "9787029999999",
+    "binding": "paperback",
+    "is_first_edition": true,
+    "is_first_print": true,
+    "is_limited": false,
+    "is_signed": false,
+    "price_list": 48.0,
+    "price_now": 45.0,
+    "stock_status": "in_stock",
+    "listing_date": "2025-10-15",
+    "jd_url": "https://example.com/jd/5",
+    "second_hand_premium": null,
+    "rating": 6.2,
+    "rating_count": 300,
+    "tags": [
+      "流行",
+      "娱乐",
+      "短视频"
+    ],
+    "awards": [],
+    "adapted": false,
+    "review_keywords": [
+      "当下热梗",
+      "轻松"
+    ],
+    "author_bio": "网络写作者，作品以流行文化为主。",
+    "structured_score": 22.0,
+    "structured_components": {
+      "total": 22.0,
+      "version": 15.0,
+      "author": 0.0,
+      "consensus": 5,
+      "theme": 2,
+      "market": 0.0,
+      "penalized": false
+    },
+    "llm": {
+      "classic_potential": 0,
+      "era_significance": 0,
+      "ip_potential": 0,
+      "structured_adjustment": 0,
+      "confidence": 0,
+      "rationale": ""
+    },
+    "structured_score_adjusted": 22.0,
+    "final_score": 22.0,
+    "tier": "阅读价值为主"
+  },
+  {
+    "title": "银幕风暴：新世纪科幻故事集",
+    "author": "周远",
+    "publisher": "新星出版社",
+    "publish_date": "2025-06-20",
+    "print_info": "再版二印",
+    "isbn": "9787513355555",
+    "binding": "paperback",
+    "is_first_edition": false,
+    "is_first_print": false,
+    "is_limited": false,
+    "is_signed": true,
+    "price_list": 59.0,
+    "price_now": 49.0,
+    "stock_status": "in_stock",
+    "listing_date": "2025-07-05",
+    "jd_url": "https://example.com/jd/3",
+    "second_hand_premium": null,
+    "rating": 7.4,
+    "rating_count": 900,
+    "tags": [
+      "科幻",
+      "小说",
+      "流行"
+    ],
+    "awards": [],
+    "adapted": true,
+    "review_keywords": [
+      "脑洞",
+      "流行",
+      "影视感"
+    ],
+    "author_bio": "青年科幻作家，近年频繁获奖提名。",
+    "structured_score": 7.0,
+    "structured_components": {
+      "total": 7.0,
+      "version": 5.0,
+      "author": 2.0,
+      "consensus": 5,
+      "theme": 2,
+      "market": 0.0,
+      "penalized": true
+    },
+    "llm": {
+      "classic_potential": 0,
+      "era_significance": 0,
+      "ip_potential": 0,
+      "structured_adjustment": 0,
+      "confidence": 0,
+      "rationale": ""
+    },
+    "structured_score_adjusted": 7.0,
+    "final_score": 7.0,
+    "tier": "阅读价值为主"
+  }
+]
