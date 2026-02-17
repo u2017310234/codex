@@ -30,6 +30,27 @@ class DoubanClient:
         html = self.client.get_text(subject_url, headers=_douban_headers())
         return parse_subject(html, subject_url)
 
+    def fetch_tag(self, tag: str, max_items: int = 20) -> list[dict[str, Any]]:
+        items: list[dict[str, Any]] = []
+        start = 0
+        while len(items) < max_items:
+            url = f"https://book.douban.com/tag/{tag}"
+            html = self.client.get_text(url, params={"start": start, "type": "T"}, headers=_douban_headers())
+            for match in re.finditer(r"href=\"(https://book\.douban\.com/subject/\d+/)\"[^>]*title=\"([^\"]+)\"", html):
+                subject_url = match.group(1)
+                title = _clean_text(match.group(2))
+                if subject_url in {i.get("douban_url") for i in items}:
+                    continue
+                items.append({"title": title, "douban_url": subject_url})
+                if len(items) >= max_items:
+                    break
+            if "没有找到" in html or "没有找到" in html:
+                break
+            start += 20
+            if start > 200:
+                break
+        return items
+
 
 def parse_first_subject_url(html: str) -> str | None:
     match = re.search(r"href=\"(https://book\.douban\.com/subject/\d+/)\"", html)

@@ -29,6 +29,8 @@ def main() -> int:
     parser.add_argument("--timeout", type=int, default=20)
     parser.add_argument("--retries", type=int, default=3)
     parser.add_argument("--use-sample", action="store_true")
+    parser.add_argument("--jd-fast", action="store_true", help="Skip JD detail/price; use ranking item only")
+    parser.add_argument("--douban-tag", type=str, default="", help="Fetch Douban tag list (e.g. 新书) instead of JD")
 
     args = parser.parse_args()
     output_dir = Path(args.output_dir)
@@ -51,18 +53,50 @@ def main() -> int:
     jd_client = JDClient(http_client)
     douban_client = DoubanClient(http_client)
 
+    jd_records = []
+    douban_records = []
+
+    if args.douban_tag:
+        # Fetch Douban tag list only
+        tag_items = douban_client.fetch_tag(args.douban_tag, max_items=args.max_items)
+        for item in tag_items:
+            douban = douban_client.fetch_by_isbn(item.get("isbn")) if item.get("isbn") else douban_client.search_by_title(item.get("title", ""), item.get("author"))
+            if douban:
+                douban_records.append(douban)
+        # JD left empty when using douban tag mode
+        save_json(output_dir / "jd_live.json", jd_records)
+        save_json(output_dir / "douban_live.json", douban_records)
+        print(f"Fetched 0 JD records and {len(douban_records)} Douban records via tag {args.douban_tag}")
+        return 0
+
     rank_urls = _load_rank_urls(args.rank_urls)
     if args.jd_mode == "search":
         search_items = jd_client.search(args.keyword, pages=args.pages, max_items=args.max_items)
     else:
         search_items = jd_client.fetch_rankings(rank_urls or DEFAULT_RANK_URLS, max_items=args.max_items)
-    jd_records = []
-    douban_records = []
     for item in search_items:
         sku = item.get("sku")
         if not sku:
             continue
-        detail = jd_client.fetch_detail(sku, item.get("jd_url"))
+        if args.jd_fast:
+            detail = {
+                "title": item.get("title"),
+                "author": item.get("author"),
+                "publisher": None,
+                "publish_date": None,
+                "print_info": None,
+                "isbn": None,
+                "binding": None,
+                "is_limited": False,
+                "is_signed": False,
+                "price_list": None,
+                "price_now": None,
+                "stock_status": None,
+                "jd_url": item.get("jd_url"),
+                "sku": sku,
+            }
+        else:
+            detail = jd_client.fetch_detail(sku, item.get("jd_url"))
         jd_records.append(detail)
         isbn = detail.get("isbn")
         if isbn:

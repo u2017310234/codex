@@ -61,7 +61,12 @@ def run_pipeline(
 ) -> dict[str, Any]:
     jd_norm = [normalize_jd_record(r) for r in jd_records]
     douban_norm = [normalize_douban_record(r) for r in douban_records]
-    merged_pairs = match_records(jd_norm, douban_norm)
+
+    if not jd_norm and douban_norm:
+        merged_pairs = [{"jd": {}, "douban": d} for d in douban_norm]
+    else:
+        merged_pairs = match_records(jd_norm, douban_norm)
+
     buckets = compute_consensus_buckets(merged_pairs)
 
     books: list[dict[str, Any]] = []
