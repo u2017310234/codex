@@ -72,7 +72,7 @@ Set environment variables and run without `--mock-llm`:
 
 ```bash
 export GEMINI_API_KEY=... 
-export GEMINI_MODEL=gemini-1.5-pro
+export GEMINI_MODEL=gemini-3-flash-preview
 python3 /workspaces/codex/book/pipelines/run_pipeline.py --use-sample
 ```
 

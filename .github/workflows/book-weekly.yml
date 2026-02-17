@@ -46,7 +46,7 @@ jobs:
       - name: Run scoring pipeline
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-          GEMINI_MODEL: gemini-1.5-pro
+          GEMINI_MODEL: gemini-3-flash-preview
         run: |
           python3 book/pipelines/run_pipeline.py \
             --jd-data book/data/jd_live.json \
