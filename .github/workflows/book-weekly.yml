@@ -48,14 +48,16 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3-flash-preview
         run: |
+          mkdir -p output/book
           python3 book/pipelines/run_pipeline.py \
             --jd-data book/data/jd_live.json \
-            --douban-data book/data/douban_live.json
+            --douban-data book/data/douban_live.json \
+            --output-dir output/book
       - name: Upload outputs
         uses: actions/upload-artifact@v4
         with:
           name: book-pipeline-output
           path: |
-            book/output
+            output/book
             book/data/jd_live.json
             book/data/douban_live.json
