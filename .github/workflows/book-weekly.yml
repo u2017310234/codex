@@ -1,0 +1,47 @@
+name: Book Weekly Pipeline
+
+on:
+  schedule:
+    # Friday 21:00 China Standard Time (UTC+8) => 13:00 UTC
+    - cron: '0 13 * * 5'
+  workflow_dispatch:
+
+jobs:
+  run-book-pipeline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r book/requirements.txt
+      - name: Fetch JD/Douban data
+        run: |
+          python3 book/pipelines/fetch_sources.py \
+            --keyword "精装 首版" \
+            --jd-mode phb \
+            --pages 1 \
+            --max-items 20 \
+            --sleep-min 1.5 \
+            --sleep-max 3.0 \
+            --retries 3 \
+            --timeout 25
+      - name: Run scoring pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-1.5-pro
+        run: |
+          python3 book/pipelines/run_pipeline.py \
+            --jd-data book/data/jd_live.json \
+            --douban-data book/data/douban_live.json
+      - name: Upload outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-pipeline-output
+          path: |
+            book/output
+            book/data/jd_live.json
+            book/data/douban_live.json

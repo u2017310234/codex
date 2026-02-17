@@ -1,0 +1,62 @@
+[
+  {
+    "title": "社会契约论",
+    "author": "让-雅克·卢梭",
+    "isbn": "9787100042001",
+    "rating": 9.2,
+    "rating_count": 52000,
+    "tags": ["政治哲学", "经典", "思想"],
+    "awards": ["经典译本"],
+    "adapted": false,
+    "review_keywords": ["经典", "政治哲学", "社会契约"],
+    "author_bio": "启蒙时代思想家，影响现代政治哲学。"
+  },
+  {
+    "title": "城市与社会：现代性进程",
+    "author": "李明",
+    "isbn": "9787208177777",
+    "rating": 8.6,
+    "rating_count": 4200,
+    "tags": ["社会学", "城市研究", "现代性"],
+    "awards": [],
+    "adapted": false,
+    "review_keywords": ["理论扎实", "方法论"],
+    "author_bio": "城市社会学研究者，近年出版多部学术著作。"
+  },
+  {
+    "title": "银幕风暴：新世纪科幻故事集",
+    "author": "周远",
+    "isbn": "9787513355555",
+    "rating": 7.4,
+    "rating_count": 900,
+    "tags": ["科幻", "小说", "流行"],
+    "awards": [],
+    "adapted": true,
+    "review_keywords": ["脑洞", "流行", "影视感"],
+    "author_bio": "青年科幻作家，近年频繁获奖提名。"
+  },
+  {
+    "title": "资本与秩序：经济思想史",
+    "author": "王珊",
+    "isbn": "9787300312345",
+    "rating": 9.0,
+    "rating_count": 12000,
+    "tags": ["经济思想", "历史", "政治经济"],
+    "awards": ["国家级奖项"],
+    "adapted": false,
+    "review_keywords": ["体系完整", "学术价值"],
+    "author_bio": "经济思想史学者，长期研究制度演化。"
+  },
+  {
+    "title": "热梗小说：短视频时代",
+    "author": "陈凯",
+    "isbn": "9787029999999",
+    "rating": 6.2,
+    "rating_count": 300,
+    "tags": ["流行", "娱乐", "短视频"],
+    "awards": [],
+    "adapted": false,
+    "review_keywords": ["当下热梗", "轻松"],
+    "author_bio": "网络写作者，作品以流行文化为主。"
+  }
+]
