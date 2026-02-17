@@ -80,7 +80,10 @@ class JDClient:
 def fetch_price(client: HttpClient, sku: str) -> tuple[float | None, float | None]:
     url = "https://p.3.cn/prices/mgets"
     params = {"skuIds": f"J_{sku}"}
-    data = client.get_json(url, params=params, headers=_jd_headers())
+    try:
+        data = client.get_json(url, params=params, headers=_jd_headers())
+    except Exception:
+        return None, None
     if not data:
         return None, None
     item = data[0]
