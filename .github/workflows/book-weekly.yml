@@ -18,8 +18,9 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: python -m pip install -r book/requirements.txt
-      - name: Fetch JD/Douban data
+      - name: Fetch JD/Douban data (JD errors won't fail)
         run: |
+          set +e
           python3 book/pipelines/fetch_sources.py \
             --keyword "精装 首版" \
             --jd-mode phb \
@@ -28,7 +29,20 @@ jobs:
             --sleep-min 1.5 \
             --sleep-max 3.0 \
             --retries 3 \
-            --timeout 25
+            --timeout 25 \
+            --jd-fast
+          status=$?
+          if [ $status -ne 0 ]; then
+            echo "JD fetch failed; fallback to Douban tag 新书"
+            python3 book/pipelines/fetch_sources.py \
+              --douban-tag 新书 \
+              --max-items 20 \
+              --sleep-min 1.0 \
+              --sleep-max 2.0 \
+              --retries 2 \
+              --timeout 25
+          fi
+          exit 0
       - name: Run scoring pipeline
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
