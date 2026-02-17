@@ -64,32 +64,7 @@ jobs:
             fi
           done
           # update output/book/book.md (prepend latest)
-          cat > /tmp/book_md.py <<'PY'
-import json
-from pathlib import Path
-
-out_dir = Path('output/book')
-json_files = sorted(out_dir.glob('books_scored_*.json'), reverse=True)
-if not json_files:
-    raise SystemExit('no books_scored_*.json found')
-latest = json_files[0]
-run_ts = latest.stem.split('books_scored_')[-1]
-
-books = json.loads(latest.read_text(encoding='utf-8'))
-lines = []
-for b in books:
-    title = b.get('title') or ''
-    score = b.get('final_score')
-    llm = (b.get('llm') or {}).get('rationale') or ''
-    lines.append(f"- {title} | {run_ts} | {score} | {llm}")
-
-md_path = out_dir / 'book.md'
-existing = md_path.read_text(encoding='utf-8') if md_path.exists() else ''
-header = "# Book Runs\n\n"
-new_block = "\n".join(lines) + "\n\n"
-md_path.write_text(header + new_block + existing.replace(header, ''), encoding='utf-8')
-PY
-          python3 /tmp/book_md.py
+          python3 book/pipelines/update_book_md.py
       - name: Upload outputs
         uses: actions/upload-artifact@v4
         with:
