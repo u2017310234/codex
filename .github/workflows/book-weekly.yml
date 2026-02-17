@@ -53,6 +53,44 @@ jobs:
             --jd-data book/data/jd_live.json \
             --douban-data book/data/douban_live.json \
             --output-dir output/book
+          # timestamped filenames
+          TS=$(date -u +%Y%m%d-%H%M%S)
+          for f in output/book/books_scored.csv output/book/books_scored.json output/book/observation_pool.json; do
+            if [ -f "$f" ]; then
+              base=$(basename "$f")
+              ext=${base##*.}
+              name=${base%.*}
+              mv "$f" "output/book/${name}_${TS}.${ext}"
+            fi
+          done
+          # update output/book/book.md (prepend latest)
+          python3 - <<'PY'
+import json, os, datetime
+from pathlib import Path
+
+out_dir = Path('output/book')
+# find latest scored json by timestamp
+json_files = sorted(out_dir.glob('books_scored_*.json'), reverse=True)
+if not json_files:
+    raise SystemExit('no books_scored_*.json found')
+latest = json_files[0]
+run_ts = latest.stem.split('books_scored_')[-1]
+
+books = json.loads(latest.read_text(encoding='utf-8'))
+# build lines: title | time | score | llm建议
+lines = []
+for b in books:
+    title = b.get('title') or ''
+    score = b.get('final_score')
+    llm = (b.get('llm') or {}).get('rationale') or ''
+    lines.append(f"- {title} | {run_ts} | {score} | {llm}")
+
+md_path = out_dir / 'book.md'
+existing = md_path.read_text(encoding='utf-8') if md_path.exists() else ''
+header = "# Book Runs\n\n"
+new_block = "\n".join(lines) + "\n\n"
+md_path.write_text(header + new_block + existing.replace(header, ''), encoding='utf-8')
+PY
       - name: Upload outputs
         uses: actions/upload-artifact@v4
         with:
