@@ -1,0 +1,100 @@
+name: Book Weekly Pipeline
+
+on:
+  schedule:
+    # Friday 21:00 China Standard Time (UTC+8) => 13:00 UTC
+    - cron: '0 13 * * 5'
+  workflow_dispatch:
+
+jobs:
+  run-book-pipeline:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: python -m pip install -r book/requirements.txt
+      - name: Fetch JD/Douban data (JD errors won't fail)
+        run: |
+          set +e
+          python3 book/pipelines/fetch_sources.py \
+            --keyword "精装 首版" \
+            --jd-mode phb \
+            --pages 1 \
+            --max-items 20 \
+            --sleep-min 1.5 \
+            --sleep-max 3.0 \
+            --retries 3 \
+            --timeout 25 \
+            --jd-fast
+          status=$?
+          if [ $status -ne 0 ]; then
+            echo "JD fetch failed; fallback to Douban tag 新书"
+            python3 book/pipelines/fetch_sources.py \
+              --douban-tag 新书 \
+              --max-items 20 \
+              --sleep-min 1.0 \
+              --sleep-max 2.0 \
+              --retries 2 \
+              --timeout 25
+          fi
+          exit 0
+      - name: Run scoring pipeline
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GEMINI_MODEL: gemini-3-flash-preview
+        run: |
+          mkdir -p output/book
+          python3 book/pipelines/run_pipeline.py \
+            --jd-data book/data/jd_live.json \
+            --douban-data book/data/douban_live.json \
+            --output-dir output/book
+          # timestamped filenames
+          TS=$(date -u +%Y%m%d-%H%M%S)
+          for f in output/book/books_scored.csv output/book/books_scored.json output/book/observation_pool.json; do
+            if [ -f "$f" ]; then
+              base=$(basename "$f")
+              ext=${base##*.}
+              name=${base%.*}
+              mv "$f" "output/book/${name}_${TS}.${ext}"
+            fi
+          done
+          # update output/book/book.md (prepend latest)
+          cat > /tmp/book_md.py <<'PY'
+import json
+from pathlib import Path
+
+out_dir = Path('output/book')
+json_files = sorted(out_dir.glob('books_scored_*.json'), reverse=True)
+if not json_files:
+    raise SystemExit('no books_scored_*.json found')
+latest = json_files[0]
+run_ts = latest.stem.split('books_scored_')[-1]
+
+books = json.loads(latest.read_text(encoding='utf-8'))
+lines = []
+for b in books:
+    title = b.get('title') or ''
+    score = b.get('final_score')
+    llm = (b.get('llm') or {}).get('rationale') or ''
+    lines.append(f"- {title} | {run_ts} | {score} | {llm}")
+
+md_path = out_dir / 'book.md'
+existing = md_path.read_text(encoding='utf-8') if md_path.exists() else ''
+header = "# Book Runs\n\n"
+new_block = "\n".join(lines) + "\n\n"
+md_path.write_text(header + new_block + existing.replace(header, ''), encoding='utf-8')
+PY
+          python3 /tmp/book_md.py
+      - name: Upload outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: book-pipeline-output
+          path: |
+            output/book
+            book/data/jd_live.json
+            book/data/douban_live.json
