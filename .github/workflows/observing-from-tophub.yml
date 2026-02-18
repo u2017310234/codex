@@ -2,8 +2,8 @@ name: Observing From Tophub
 
 on:
   schedule:
-    - cron: "20 1 * * *"   # 09:20 Asia/Shanghai
-    - cron: "35 10 * * *"  # 18:35 Asia/Shanghai
+    - cron: "40 1 * * *"   # 09:40 Asia/Shanghai
+    - cron: "55 10 * * *"  # 18:55 Asia/Shanghai
   workflow_dispatch:
 
 permissions:
