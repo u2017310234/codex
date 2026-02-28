@@ -44,7 +44,7 @@ class DoubanClient:
                 items.append({"title": title, "douban_url": subject_url})
                 if len(items) >= max_items:
                     break
-            if "没有找到" in html or "没有找到" in html:
+            if "没有找到" in html or "没有结果" in html:
                 break
             start += 20
             if start > 200:

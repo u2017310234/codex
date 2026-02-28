@@ -156,7 +156,7 @@ class ExcelContextExtractor:
                                 # 尝试转换为基本类型
                                 if hasattr(value, '__str__') and not isinstance(value, (str, int, float, bool, type(None))):
                                     serializable_value = str(value)
-                            except:
+                            except Exception:
                                 serializable_value = str(value)
                         else:
                             serializable_value = None
