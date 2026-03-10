@@ -13,14 +13,14 @@
       "url": "https://polymarket.com/market/will-cryptopunks-floor-price-dip-to-20-eth-before-2027",
       "category": "finance",
       "endDate": "2027-01-01",
-      "yesPrice": 0.565,
-      "noPrice": 0.435
+      "yesPrice": 0.465,
+      "noPrice": 0.535
     }
   ],
   "meta": {
     "source": "api",
     "cached": false,
-    "totalCount": 10000,
+    "totalCount": 9996,
     "filteredCount": 3,
     "usedTags": [
       "finance",
