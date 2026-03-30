@@ -1,17 +1,23 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+import argparse
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 
 def main() -> int:
-    out_dir = Path("output/book")
-    json_files = sorted(out_dir.glob("books_scored_*.json"), reverse=True)
-    if not json_files:
-        raise SystemExit("no books_scored_*.json found")
-    latest = json_files[0]
-    run_ts = latest.stem.split("books_scored_")[-1]
+    parser = argparse.ArgumentParser(description="Update markdown summary for latest book run")
+    parser.add_argument("--out-dir", default="book/output", help="output directory containing books_scored.json")
+    args = parser.parse_args()
+
+    out_dir = Path(args.out_dir)
+    latest = out_dir / "books_scored.json"
+    if not latest.exists():
+        raise SystemExit(f"{latest} not found")
+
+    run_ts = datetime.now(timezone.utc).strftime("%Y%m%d-%H%M%S")
 
     books = json.loads(latest.read_text(encoding="utf-8"))
     lines = []
