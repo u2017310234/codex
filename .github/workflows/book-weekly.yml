@@ -48,13 +48,14 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3-flash-preview
         run: |
+          TS=$(date -u +%Y%m%d-%H%M%S)
           mkdir -p book/output
           python3 book/pipelines/run_pipeline.py \
             --jd-data book/data/jd_live.json \
             --douban-data book/data/douban_live.json \
             --output-dir book/output
           # update book/output/book.md (prepend latest)
-          python3 book/pipelines/update_book_md.py --out-dir book/output
+          python3 book/pipelines/update_book_md.py --out-dir book/output --run-ts "$TS"
       - name: Commit and push outputs
         run: |
           git config user.name "github-actions[bot]"
