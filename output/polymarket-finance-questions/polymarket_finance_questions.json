@@ -5,16 +5,16 @@
       "url": "https://polymarket.com/market/will-cryptopunks-floor-price-reach-50-eth-before-2027",
       "category": "finance",
       "endDate": "2027-01-01",
-      "yesPrice": 0.495,
-      "noPrice": 0.505
+      "yesPrice": 0.55,
+      "noPrice": 0.45
     },
     {
       "title": "Will CryptoPunks floor price dip to 10 ETH before 2027?",
       "url": "https://polymarket.com/market/will-cryptopunks-floor-price-dip-to-10-eth-before-2027",
       "category": "finance",
       "endDate": "2027-01-01",
-      "yesPrice": 0.17,
-      "noPrice": 0.83
+      "yesPrice": 0.165,
+      "noPrice": 0.835
     }
   ],
   "meta": {
