@@ -1,5 +1,9 @@
 __pycache__/
 *.pyc
 .output/
-output/
+output/*
+!output/books_scored.csv
+!output/books_scored.json
+!output/observation_pool.json
+!output/book.md
 data/*_live.json
