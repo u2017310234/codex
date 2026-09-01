@@ -10,7 +10,7 @@ jobs:
   run-book-pipeline:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -48,28 +48,30 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GEMINI_MODEL: gemini-3-flash-preview
         run: |
-          mkdir -p output/book
+          TS=$(date -u +%Y%m%d-%H%M%S)
+          mkdir -p book/output
           python3 book/pipelines/run_pipeline.py \
             --jd-data book/data/jd_live.json \
             --douban-data book/data/douban_live.json \
-            --output-dir output/book
-          # timestamped filenames
-          TS=$(date -u +%Y%m%d-%H%M%S)
-          for f in output/book/books_scored.csv output/book/books_scored.json output/book/observation_pool.json; do
-            if [ -f "$f" ]; then
-              base=$(basename "$f")
-              ext=${base##*.}
-              name=${base%.*}
-              mv "$f" "output/book/${name}_${TS}.${ext}"
-            fi
-          done
-          # update output/book/book.md (prepend latest)
-          python3 book/pipelines/update_book_md.py
+            --output-dir book/output
+          # update book/output/book.md (prepend latest)
+          python3 book/pipelines/update_book_md.py --out-dir book/output --run-ts "$TS"
+      - name: Commit and push outputs
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add book/output book/data/jd_live.json book/data/douban_live.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "chore(book): weekly pipeline update"
+          git push
       - name: Upload outputs
         uses: actions/upload-artifact@v4
         with:
           name: book-pipeline-output
           path: |
-            output/book
+            book/output
             book/data/jd_live.json
             book/data/douban_live.json
