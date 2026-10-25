@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-25",
+  "source_url": "https://tophub.today/c/ent",
+  "fetched_from": "https://tophub.today/c/ent",
+  "titles_count": 370,
+  "hot_events": [
+    "《绝区零》发布先导演示，引发玩家高度关注。(绝区零)",
+    "iPhone Duo万次折叠评测，揭示手机耐用极限。(iPhone Duo评测)",
+    "《人间异想计划》22分钟实机首曝，引发玩家热议。(人间异想计划)",
+    "全校师生团结一致，共同完成感人事件。(全校团结)",
+    "国家应急广播提醒：充电器不拔存火灾隐患。(国家应急广播)"
+  ],
+  "hot_memes": [
+    "派大星跳伞",
+    "大肥鱼",
+    "绷不住了",
+    "曼的一半是man",
+    "行行出老六"
+  ],
+  "model": "gemini-2.5-flash",
+  "generated_at": "2026-10-25T06:07:29.090Z"
+}
