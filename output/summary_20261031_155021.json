@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-31",
+  "source_url": "https://tophub.today/c/ent",
+  "fetched_from": "https://tophub.today/c/ent",
+  "titles_count": 370,
+  "hot_events": [
+    "自媒体人徽剑遭买凶灭口，引发社会关注。",
+    "皇马就某事件向中国人民道歉，总台确认收到。",
+    "姆巴佩道歉事件引外交部回应，持续发酵。",
+    "追尾司机用AI定责并质疑交警，被判全责。",
+    "《原神》作为中国游戏IP，成功走向世界。"
+  ],
+  "hot_memes": [
+    "赛博修行",
+    "烂梗下桌",
+    "token没啦",
+    "三年之期已到",
+    "蓝色大肥鱼"
+  ],
+  "model": "gemini-2.5-flash",
+  "generated_at": "2026-10-31T15:50:21.718Z"
+}
