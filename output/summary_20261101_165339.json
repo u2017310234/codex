@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-02",
+  "source_url": "https://tophub.today/c/ent",
+  "fetched_from": "https://tophub.today/c/ent",
+  "titles_count": 373,
+  "hot_events": [
+    "皇马向中国人民道歉，总台已确认收到。",
+    "消防员实测鲨鱼夹，警示驾驶骑行风险。",
+    "《原神》作为IP出海，让世界认识中国游戏。",
+    "《星布谷地》公测定档12月4日全球上线。",
+    "自媒体人徽剑被买凶杀害，引发社会关注。"
+  ],
+  "hot_memes": [
+    "全球笑点下降2000倍",
+    "此弟不宜久留",
+    "忙着跟生活对线",
+    "烂梗下桌",
+    "请假的同学be like"
+  ],
+  "model": "gemini-2.5-flash",
+  "generated_at": "2026-11-01T16:53:39.153Z"
+}
