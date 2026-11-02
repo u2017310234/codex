@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-03",
+  "source_url": "https://tophub.today/c/ent",
+  "fetched_from": "https://tophub.today/c/ent",
+  "titles_count": 370,
+  "hot_events": [
+    "BLG在S赛淘汰LCK战队HLE晋级，引发热议。(Bilibili)",
+    "皇马就某事件向中国人民道歉，总台确认收到。(Bilibili)",
+    "《原神》出海长红，让世界认识中国游戏。(Bilibili)",
+    "故宫太和殿天花板发现百年前“监控”，引发关注。(Bilibili)",
+    "高盛发现AI取代工人再就业困难，引发社会担忧。(喷嚏网)"
+  ],
+  "hot_memes": [
+    "全球笑点下降2000倍",
+    "烂梗下桌",
+    "此弟不宜久留",
+    "动物迷惑行为大赏",
+    "晶格别钓我了"
+  ],
+  "model": "gemini-2.5-flash",
+  "generated_at": "2026-11-02T20:28:46.813Z"
+}
