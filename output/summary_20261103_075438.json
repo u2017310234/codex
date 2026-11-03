@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-03",
+  "source_url": "https://tophub.today/c/ent",
+  "fetched_from": "https://tophub.today/c/ent",
+  "titles_count": 370,
+  "hot_events": [
+    "BLG战队S赛淘汰HLE晋级16强，引发电竞狂欢。(Source: Bilibili)",
+    "武汉万圣节滴滴司机被堵车被毁，引发社会关注。(Source: 短视频平台)",
+    "“黑色星期五”席卷全球，英特尔股价重挫28%。(Source: 喷嚏)",
+    "高市早苗引导外国领导人向日旗鞠躬，引发外交争议。(Source: Bilibili)",
+    "故宫太和殿天花板发现百年“监控”，引发历史关注。(Source: Bilibili)"
+  ],
+  "hot_memes": [
+    "全球笑点下降2000倍",
+    "今天请假的同学be like",
+    "全网搬大润发第一人",
+    "烂梗下桌",
+    "生儿子不吱声"
+  ],
+  "model": "gemini-2.5-flash",
+  "generated_at": "2026-11-03T07:54:38.040Z"
+}
