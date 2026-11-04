@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-04",
+  "source_url": "https://tophub.today/c/ent",
+  "fetched_from": "https://tophub.today/c/ent",
+  "titles_count": 370,
+  "hot_events": [
+    "DeepSeek Harness正式入驻B站，引发广泛关注。来源：B站",
+    "BLG战队淘汰LCK银河战舰HLE，晋级S赛八强。来源：电竞赛事报道",
+    "卡尔布什比完成徒步绕地球挑战，成为世界首位。来源：人类群星闪耀时",
+    "记者实测多款奶茶含糖量超标，引发健康关注。来源：媒体原创",
+    "延安大学副教授白保国投湖，绝笔信揭露制度问题。来源：新闻报道"
+  ],
+  "hot_memes": [
+    "宠粉天花板",
+    "大肥鱼",
+    "全网搬大润发",
+    "男人至死是少年",
+    "金刚FUNK"
+  ],
+  "model": "gemini-2.5-flash",
+  "generated_at": "2026-11-04T07:29:34.857Z"
+}
