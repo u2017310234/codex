@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-20",
+  "source_url": "https://tophub.today/c/ent",
+  "fetched_from": "https://tophub.today/c/ent",
+  "titles_count": 378,
+  "hot_events": [
+    "中美元首深圳会晤，特朗普表态不支持“台独”。",
+    "习近平主持中俄美元首会晤，聚焦国际重要议题。",
+    "《GTA6》获IGN满分评测，被誉为时代最伟大游戏。",
+    "BLG战队夺得世界冠军，麦克风记录激动时刻。",
+    "芜湖工人高空作业安全绳被割断，警方已介入调查。"
+  ],
+  "hot_memes": [
+    "蚌埠住",
+    "你不讲武德",
+    "臣妾要告发",
+    "人类迷惑行为大赏",
+    "覆面系"
+  ],
+  "model": "gemini-2.5-flash",
+  "generated_at": "2026-11-20T08:31:42.962Z"
+}
